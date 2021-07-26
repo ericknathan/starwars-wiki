@@ -1,4 +1,4 @@
-export const fonts = {
+export const fonts: any = {
   regular: 'SourceSansPro_400Regular',
   semiBold: 'SourceSansPro_600SemiBold',
   bold: 'SourceSansPro_700Bold',

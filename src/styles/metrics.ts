@@ -12,6 +12,6 @@ const px = (valuePx: number) => {
   return screenPixel
 }
 
-export const metrics = {
+export const metrics: any = {
   px,
 }

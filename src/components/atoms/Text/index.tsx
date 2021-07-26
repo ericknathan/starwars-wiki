@@ -2,11 +2,17 @@ import React from 'react'
 import { ReactNode } from 'react'
 import { CustomText } from './styles'
 
-type Props = {
+type TextProps = {
   children: ReactNode
   color?: string
+  fontFamily?: string
+  size?: number
+  mt?: number
+  mb?: number
+  ml?: number
+  mr?: number
 }
 
-export const Text = ({ children, color }: Props) => {
-  return <CustomText color={color}>{children}</CustomText>
+export const Text = ({ children, ...props }: TextProps) => {
+  return <CustomText {...props}>{children}</CustomText>
 }

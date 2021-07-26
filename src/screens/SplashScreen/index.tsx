@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Text, Logo, Container } from '../../components'
+import { Text, Logo, Container } from '~/components'
 
 export const SplashScreen = ({ navigation }) => {
   useEffect(() => {

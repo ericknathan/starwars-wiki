@@ -1,4 +1,4 @@
-export const colors = {
+export const colors: any = {
   white: '#FFFFFF',
   light: '#E5E5E5',
   red: '#E60C0D',

@@ -8,4 +8,18 @@ export const theme = {
   metrics,
 }
 
-export type themeType = typeof theme
+type themeType = typeof theme
+type ThemePropsType = {
+  color?: string
+  size?: number
+  mt?: number
+  mb?: number
+  ml?: number
+  mr?: number
+  fontFamily?: string
+}
+
+declare module 'styled-components' {
+  export interface DefaultTheme extends themeType {}
+  export interface ThemeProps<T> extends ThemePropsType {}
+}

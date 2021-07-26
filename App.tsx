@@ -9,12 +9,8 @@ import {
   SourceSansPro_600SemiBold,
   SourceSansPro_900Black,
 } from '@expo-google-fonts/source-sans-pro'
-import { theme, themeType } from './src/styles'
+import { theme } from './src/styles'
 import { Routes } from './src/routes'
-
-declare module 'styled-components' {
-  export interface DefaultTheme extends themeType {}
-}
 
 export default function App() {
   let [fontsLoaded] = useFonts({
