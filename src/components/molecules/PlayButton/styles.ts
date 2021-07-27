@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-export const PlayContainer = styled.TouchableOpacity`
+export const PlayButtonContainer = styled.TouchableOpacity`
   display: flex;
   flex-direction: row;
   align-items: center;

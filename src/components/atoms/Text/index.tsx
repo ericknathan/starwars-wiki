@@ -11,6 +11,8 @@ type TextProps = {
   mb?: number
   ml?: number
   mr?: number
+  lh?: number
+  style?: object
 }
 
 export const Text = ({ children, ...props }: TextProps) => {

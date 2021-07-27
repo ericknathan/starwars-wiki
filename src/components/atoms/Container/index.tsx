@@ -20,6 +20,15 @@ export const Container = styled.View`
   height: ${({ h, theme }) => (h ? `${theme.metrics.px(h)}px` : '100%')};
 `
 
-export const ScreenScrollContainer = styled.ScrollView`
+export const ScreenScrollContainer = styled.ScrollView.attrs(
+  ({ theme, withPadding }) => ({
+    contentContainerStyle: withPadding
+      ? {
+          paddingHorizontal: theme.metrics.px(24),
+          paddingVertical: theme.metrics.px(56),
+        }
+      : {},
+  })
+)`
   background-color: ${({ bg, theme }: ViewType) => theme.colors[bg || 'dark']};
 `

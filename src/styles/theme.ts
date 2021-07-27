@@ -16,6 +16,7 @@ type ThemePropsType = {
   mb?: number
   ml?: number
   mr?: number
+  lh?: number
   fontFamily?: string
 }
 

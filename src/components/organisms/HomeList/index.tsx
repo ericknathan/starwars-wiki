@@ -8,9 +8,10 @@ import { theme } from '~/styles/theme'
 type HomeListType = {
   data: Array<{ id: number; image_url: string }>
   title: string
+  type: string
 }
 
-export const HomeList = ({ data, title }: HomeListType) => {
+export const HomeList = ({ data, title, type }: HomeListType) => {
   return (
     <ListContainer>
       <Text ml={24} fontFamily="black" size={18}>
@@ -19,7 +20,7 @@ export const HomeList = ({ data, title }: HomeListType) => {
       <FlatList
         horizontal
         data={data}
-        renderItem={({ item }) => <Card item={item} />}
+        renderItem={({ item }) => <Card item={{ ...item, type }} />}
         keyExtractor={(item) => String(item.id)}
         contentContainerStyle={{
           paddingTop: theme.metrics.px(12),
