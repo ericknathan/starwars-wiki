@@ -55,14 +55,7 @@ export const Hero = ({ item, onDetail }: ItemProps) => {
     await removeFavorite(item)
     checkIsFavorite()
   }
-  /*
-  const onPressWatch = async () => {
-    await navigation.navigate('Watch', {
-      item,
-      onDetail,
-    })
-  }
-  */
+
   const onPressWatch = () => {
     setSelectedData(item)
     navigation.navigate('Watch')

@@ -105,9 +105,3 @@ export const BottomBar = ({
     </BottomBarContainer>
   )
 }
-
-/*
-
-
-<Ionicons name={routeIcons[route.name]} size={size} color={color} />
-*/
