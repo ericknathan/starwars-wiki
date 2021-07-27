@@ -8,6 +8,7 @@ import {
   Detail,
   SearchScreen,
   FavoritesScreen,
+  WatchScreen,
 } from '~/screens'
 import { BottomBar } from '~/components'
 
@@ -44,6 +45,7 @@ export const Routes = () => {
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Home" component={BottomRoute} />
         <Stack.Screen name="Detail" component={Detail} />
+        <Stack.Screen name="Watch" component={WatchScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )

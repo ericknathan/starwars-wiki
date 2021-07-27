@@ -1,18 +1,28 @@
 import styled from 'styled-components/native'
 
-type ViewType = {
+interface ViewType {
   dir?: string
   align?: string
   justify?: string
   bg?: string
   w?: number
   h?: number
-  theme: any
+  withPadding?: boolean
+  theme?: any
 }
 
-export const Container = styled.View`
+export const Container = styled.View.attrs(
+  ({ dir, align, justify, bg, w, h }: ViewType) => ({
+    dir,
+    align,
+    justify,
+    bg,
+    w,
+    h,
+  })
+)`
   display: flex;
-  flex-direction: ${({ dir }: ViewType) => dir || 'column'};
+  flex-direction: ${({ dir }) => dir || 'column'};
   align-items: ${({ align }) => align || 'flex-start'};
   justify-content: ${({ justify }) => justify || 'flex-start'};
   background-color: ${({ bg, theme }) => theme.colors[bg || 'dark']};
@@ -21,7 +31,7 @@ export const Container = styled.View`
 `
 
 export const ScreenScrollContainer = styled.ScrollView.attrs(
-  ({ theme, withPadding }) => ({
+  ({ theme, withPadding }: ViewType) => ({
     contentContainerStyle: withPadding
       ? {
           paddingHorizontal: theme.metrics.px(24),

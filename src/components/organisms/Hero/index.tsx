@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
 import {
   HeroContainer,
   HeroImageBackground,
@@ -6,9 +7,10 @@ import {
   ButtonsView,
 } from './styles'
 import { Text, Logo } from '~/components/atoms'
-import { Tag, IconButton, PlayButton } from '~/components/molecules'
+import { Tag, IconButton, WatchButton } from '~/components/molecules'
 import { colors } from '~/styles/colors'
 import { useFavorites } from '~/services/hooks'
+import { useDataStore } from '~/services/stores'
 
 type ItemProps = {
   item: {
@@ -22,6 +24,8 @@ type ItemProps = {
 }
 
 export const Hero = ({ item, onDetail }: ItemProps) => {
+  const navigation = useNavigation()
+  const { setSelectedData } = useDataStore()
   const [loading, setLoading] = useState(true)
   const [isFavorite, setIsFavorite] = useState(false)
   const { addFavorite, getFavorites, removeFavorite } = useFavorites()
@@ -51,6 +55,18 @@ export const Hero = ({ item, onDetail }: ItemProps) => {
     await removeFavorite(item)
     checkIsFavorite()
   }
+  /*
+  const onPressWatch = async () => {
+    await navigation.navigate('Watch', {
+      item,
+      onDetail,
+    })
+  }
+  */
+  const onPressWatch = () => {
+    setSelectedData(item)
+    navigation.navigate('Watch')
+  }
 
   return (
     <HeroContainer>
@@ -76,9 +92,9 @@ export const Hero = ({ item, onDetail }: ItemProps) => {
                 isFavorite ? 'remove-circle-outline' : 'add-circle-outline'
               }
             />
+            {item.type === 'Filme' && <WatchButton onPress={onPressWatch} />}
             {!onDetail && (
               <>
-                <PlayButton />
                 <IconButton
                   label="Saiba mais"
                   iconName="information-circle-outline"
