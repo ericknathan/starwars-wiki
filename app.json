@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#161616"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -17,16 +17,17 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.ericknathan.starwarswiki",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.ericknathan.starwarswiki",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#161616"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "description": "Aplicativo sobre a franquia de filmes StarWars contendo listagem de filmes e personagens.",
+    "githubUrl": "https://github.com/ericknathan/starwars-wiki"
   }
 }
