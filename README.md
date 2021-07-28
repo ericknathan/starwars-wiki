@@ -19,7 +19,8 @@ Aplicativo com a principal funcionalidade de mostrar filmes e personagens da fra
 
 ## :hammer_and_wrench: Features 
 
--   [ ] Lorem Ipsum.
+-   [ ] Indicação de busca vazia
+-   [ ] Ordenação aleatória de filmes e personagens
 
 ## ✨ Tecnologias
 

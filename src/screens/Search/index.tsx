@@ -36,7 +36,12 @@ export const SearchScreen = () => {
         onChangeText={(text: string) => setQuery(text)}
         placeholder="Filme ou nome do personagem"
       />
-      <GridList loading={loading} type="search" data={results} />
+      <GridList
+        loading={loading}
+        type="search"
+        data={results}
+        chars={query.length}
+      />
     </ScreenScrollContainer>
   )
 }

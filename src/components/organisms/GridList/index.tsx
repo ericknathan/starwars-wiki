@@ -10,9 +10,11 @@ type GridListProps = {
   data?: [] | never[]
   type?: string
   loading?: boolean
+  chars?: number
 }
 
-export const GridList = ({ data, type, loading }: GridListProps) => {
+export const GridList = ({ data, type, loading, chars }: GridListProps) => {
+  let searchedChars = chars || 0
   return (
     <FlatList
       refreshing={loading}
@@ -29,11 +31,17 @@ export const GridList = ({ data, type, loading }: GridListProps) => {
             resizeMode="contain"
             source={type === 'favorites' ? noDataFavorites : noDataSearch}
           />
-          <Text fontFamily="semiBold" size={14} mt={12} align="center">
-            {`Nenhum ${
-              type === 'favorites' ? 'Favorito' : 'Resultado'
-            } \nEncontrado`}
-          </Text>
+          {type !== 'favorites' && searchedChars < 3 ? (
+            <Text fontFamily="semiBold" size={14} mt={12} align="center">
+              {'Pesquise por um\nfilme ou personagem'}
+            </Text>
+          ) : (
+            <Text fontFamily="semiBold" size={14} mt={12} align="center">
+              {`Nenhum ${
+                type === 'favorites' ? 'Favorito' : 'Resultado'
+              } \nEncontrado`}
+            </Text>
+          )}
         </Container>
       )}
     />

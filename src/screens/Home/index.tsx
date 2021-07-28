@@ -34,6 +34,17 @@ export const Home = () => {
     )
   }
 
+  function shuffle(arr: Array<ItemDetail>) {
+    const newArray = arr.slice()
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      const temp = newArray[i]
+      newArray[i] = newArray[j]
+      newArray[j] = temp
+    }
+    return newArray
+  }
+
   const getRandomFilm: ItemDetail =
     films[Math.floor(Math.random() * films.length)]
 
@@ -45,8 +56,12 @@ export const Home = () => {
           type: 'Filme',
         }}
       />
-      <HomeList title="Filmes" data={films} type="Filme" />
-      <HomeList title="Personagens" data={characters} type="Personagem" />
+      <HomeList title="Filmes" data={shuffle(films)} type="Filme" />
+      <HomeList
+        title="Personagens"
+        data={shuffle(characters)}
+        type="Personagem"
+      />
     </ScreenScrollContainer>
   )
 }
