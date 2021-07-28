@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { ScreenScrollContainer, Text } from '~/components/atoms'
+import { ScreenScrollContainer } from '~/components/atoms'
+import { Title } from '~/components/molecules'
 import { GridList } from '~/components/organisms'
 import { useFavorites } from '~/services/hooks'
 
@@ -26,9 +27,7 @@ export const FavoritesScreen = ({
 
   return (
     <ScreenScrollContainer withPadding>
-      <Text fontFamily="bold" size={28} mb={24}>
-        Favoritos
-      </Text>
+      <Title screenName="Favoritos" />
       <GridList type="favorites" data={favoritesList} />
     </ScreenScrollContainer>
   )

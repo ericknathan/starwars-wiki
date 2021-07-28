@@ -86,10 +86,19 @@ export const BottomBar = ({
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
+            style={{
+              backgroundColor: isFocused
+                ? theme.colors.dark
+                : theme.colors.black,
+              margin: theme.metrics.px(32),
+              height: theme.metrics.px(36),
+              borderRadius: theme.metrics.px(6),
+              padding: theme.metrics.px(6),
+            }}
           >
             <Ionicons
               name={routeIcons[route.name]}
-              size={theme.metrics.px(20)}
+              size={theme.metrics.px(18)}
               color={isFocused ? theme.colors.red : theme.colors.white}
             />
             <Text
