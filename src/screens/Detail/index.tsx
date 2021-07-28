@@ -12,7 +12,7 @@ export const Detail = () => {
         Descrição
       </Text>
       <Text ml={24} mr={24} size={14} lh={20}>
-        {selectedData.description}
+        {selectedData?.description}
       </Text>
       <GoBack />
     </ScreenScrollContainer>

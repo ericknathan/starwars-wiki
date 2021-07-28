@@ -1,6 +1,10 @@
-import create from 'zustand'
+import create, { UseStore } from 'zustand'
+import { ItemDetail } from '~/types'
 
-export const useDataStore = create((set) => ({
+export const useDataStore: UseStore<{
+  selectedData?: ItemDetail | null
+  setSelectedData: (data: ItemDetail | null) => void
+}> = create((set) => ({
   selectedData: null,
-  setSelectedData: (selectedData: any) => set({ selectedData }),
+  setSelectedData: (selectedData) => set({ selectedData }),
 }))

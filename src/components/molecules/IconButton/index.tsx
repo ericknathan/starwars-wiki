@@ -5,7 +5,7 @@ import { ButtonContainer } from './styles'
 import { theme } from '~/styles/theme'
 
 type IconProps = {
-  iconName: string
+  iconName: typeof Ionicons.defaultProps | undefined
   label: string
   onPress?: () => void
 }

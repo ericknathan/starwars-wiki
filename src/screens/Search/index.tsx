@@ -12,7 +12,7 @@ export const SearchScreen = () => {
   const callGetSearchResult = async () => {
     setLoading(true)
     const result = await getSearchResults(query)
-    if(!result.error) {
+    if (!result.error) {
       setResults(result)
     }
     setLoading(false)

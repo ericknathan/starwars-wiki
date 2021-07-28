@@ -25,7 +25,9 @@ type BottomBarType = {
   }
 }
 
-const routeIcons = {
+const routeIcons: {
+  [key: string]: 'home-outline' | 'search-outline' | 'heart-outline'
+} = {
   Home: 'home-outline',
   Search: 'search-outline',
   Favorites: 'heart-outline',

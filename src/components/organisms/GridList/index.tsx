@@ -7,9 +7,9 @@ import noDataSearch from '../../../../assets/no-results.png'
 import noDataFavorites from '../../../../assets/no-favorites.png'
 
 type GridListProps = {
-  data: []
-  type: string
-  loading: boolean
+  data?: [] | never[]
+  type?: string
+  loading?: boolean
 }
 
 export const GridList = ({ data, type, loading }: GridListProps) => {

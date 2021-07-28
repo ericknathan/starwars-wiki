@@ -4,4 +4,6 @@ export interface ItemDetail {
   subtitle?: string
   type?: string
   id?: number
+  description?: string
+  trailer_url?: string
 }

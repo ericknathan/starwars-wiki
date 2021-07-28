@@ -8,7 +8,7 @@ export const WatchScreen = () => {
   const { selectedData } = useDataStore()
 
   const YouTubeVideoId = useMemo(() => {
-    const id = selectedData.trailer_url.split('v=')[1].substring(0, 11)
+    const id = selectedData?.trailer_url?.split('v=')[1].substring(0, 11)
     return id
   }, [selectedData])
 
@@ -24,7 +24,7 @@ export const WatchScreen = () => {
         height={theme.metrics.px(300)}
         width={theme.metrics.width}
         play={playing}
-        videoId={YouTubeVideoId}
+        videoId={YouTubeVideoId || ''}
         onChangeState={onStateChange}
       />
       <GoBack />

@@ -3,7 +3,13 @@ import { ScreenScrollContainer, Text } from '~/components/atoms'
 import { GridList } from '~/components/organisms'
 import { useFavorites } from '~/services/hooks'
 
-export const FavoritesScreen = ({ navigation }) => {
+export const FavoritesScreen = ({
+  navigation,
+}: {
+  navigation: {
+    addListener: (type: string, returnFunction: () => Promise<void>) => void
+  }
+}) => {
   const [favoritesList, setFavoritesList] = useState([])
   const { getFavorites } = useFavorites()
 

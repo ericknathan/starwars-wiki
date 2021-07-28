@@ -26,23 +26,20 @@ type ItemProps = {
 export const Hero = ({ item, onDetail }: ItemProps) => {
   const navigation = useNavigation()
   const { setSelectedData } = useDataStore()
-  const [loading, setLoading] = useState(true)
-  const [showFavoriteModal, setShowFavoriteModal] = useState<string | null>(
-    null
-  )
+  const [showFavoriteModal, setShowFavoriteModal] = useState<
+    'added' | 'removed' | null
+  >(null)
   const [isFavorite, setIsFavorite] = useState(false)
   const { addFavorite, getFavorites, removeFavorite } = useFavorites()
   const { image_url, title, subtitle, type } = item
 
   const checkIsFavorite = async () => {
-    setLoading(true)
     const favorites = await getFavorites()
     const isInFavorite = favorites.filter(
       (fv: { id: number; type: string }) =>
-        fv.id === item.id && fv.type === item.type
+        fv.id === item?.id && fv.type === item?.type
     )
     setIsFavorite(isInFavorite.length > 0)
-    setLoading(false)
   }
 
   useEffect(() => {
@@ -103,7 +100,7 @@ export const Hero = ({ item, onDetail }: ItemProps) => {
                 isFavorite ? 'remove-circle-outline' : 'add-circle-outline'
               }
             />
-            {item.type === 'Filme' && <WatchButton onPress={onPressWatch} />}
+            {item?.type === 'Filme' && <WatchButton onPress={onPressWatch} />}
             {!onDetail && (
               <>
                 <IconButton

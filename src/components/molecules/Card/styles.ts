@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 export const CardContainer = styled.TouchableOpacity.attrs(
-  ({ size }: { size: { h: number; w: number } }) => ({
+  ({ size }: { size: { [key: string]: number } }) => ({
     size,
   })
 )`

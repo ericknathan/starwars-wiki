@@ -4,7 +4,12 @@ import { useNavigation } from '@react-navigation/native'
 import { useDataStore } from '~/services/stores'
 import { ItemDetail } from '~/types'
 
-const sizes = {
+const sizes: {
+  [key: string]: {
+    w: number
+    h: number
+  }
+} = {
   small: {
     h: 124,
     w: 88,
