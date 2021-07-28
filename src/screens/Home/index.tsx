@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { ScreenScrollContainer, HomeList, Hero, Loader } from '~/components'
+import { Container, ScreenScrollContainer, Loader } from '~/components/atoms'
+import { HomeList, Hero } from '~/components/organisms'
 import { useGetData } from '~/services/hooks'
+import { ItemDetail } from '~/types'
 
 export const Home = () => {
   const { getFilms, getCharacters } = useGetData()
@@ -26,17 +28,20 @@ export const Home = () => {
 
   if (loading) {
     return (
-      <ScreenScrollContainer>
+      <Container align="center" justify="center">
         <Loader />
-      </ScreenScrollContainer>
+      </Container>
     )
   }
+
+  const getRandomFilm: ItemDetail =
+    films[Math.floor(Math.random() * films.length)]
 
   return (
     <ScreenScrollContainer>
       <Hero
         item={{
-          ...films[0],
+          ...getRandomFilm,
           type: 'Filme',
         }}
       />

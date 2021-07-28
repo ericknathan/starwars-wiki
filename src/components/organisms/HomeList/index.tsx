@@ -1,12 +1,13 @@
 import React from 'react'
 import { FlatList } from 'react-native'
-import { Card } from '~/components/molecules'
 import { Text } from '~/components/atoms'
+import { Card } from '~/components/molecules'
 import { ListContainer } from './styles'
 import { theme } from '~/styles/theme'
+import { ItemDetail } from '~/types'
 
 type HomeListType = {
-  data: Array<{ id: number; image_url: string }>
+  data: Array<ItemDetail>
   title: string
   type: string
 }

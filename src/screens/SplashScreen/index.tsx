@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Text, Logo, Container } from '~/components'
+import { Text, Logo, Container } from '~/components/atoms'
 
 export const SplashScreen = ({ navigation }) => {
   useEffect(() => {
@@ -11,7 +11,9 @@ export const SplashScreen = ({ navigation }) => {
   return (
     <Container align="center" justify="center">
       <Logo />
-      <Text>StarWars - Wiki</Text>
+      <Text fontFamily="bold" size={24} mt={12}>
+        StarWars - Wiki
+      </Text>
     </Container>
   )
 }

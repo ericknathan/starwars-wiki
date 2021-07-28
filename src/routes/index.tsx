@@ -10,7 +10,7 @@ import {
   FavoritesScreen,
   WatchScreen,
 } from '~/screens'
-import { BottomBar } from '~/components'
+import { BottomBar } from '~/components/organisms'
 
 const BottomRoute = () => {
   const Tab = createBottomTabNavigator()

@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useMemo } from 'react'
-import { Container, GoBack } from '~/components'
+import { Container, GoBack } from '~/components/atoms'
 import YoutubePlayer from 'react-native-youtube-iframe'
 import { theme } from '~/styles/'
 import { useDataStore } from '~/services/stores'

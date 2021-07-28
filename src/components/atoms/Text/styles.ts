@@ -2,6 +2,7 @@ import styled from 'styled-components/native'
 
 export const CustomText = styled.Text`
   font-size: ${({ theme, size }) => theme.metrics.px(size || 24)}px;
+  text-align: ${({ align }) => align || 'left'};
   color: ${({ color, theme }) => theme.colors[color || 'white']};
   margin-top: ${({ theme, mt }) => theme.metrics.px(mt || 0)}px;
   margin-bottom: ${({ theme, mb }) => theme.metrics.px(mb || 0)}px;

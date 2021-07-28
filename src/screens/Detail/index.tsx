@@ -1,5 +1,6 @@
 import React from 'react'
-import { ScreenScrollContainer, Hero, GoBack, Text } from '~/components'
+import { GoBack, Text, ScreenScrollContainer } from '~/components/atoms'
+import { Hero } from '~/components/organisms'
 import { useDataStore } from '~/services/stores'
 
 export const Detail = () => {

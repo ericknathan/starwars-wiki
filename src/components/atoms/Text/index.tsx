@@ -13,6 +13,7 @@ type TextProps = {
   mr?: number
   lh?: number
   style?: object
+  align?: 'left' | 'center' | 'right'
 }
 
 export const Text = ({ children, ...props }: TextProps) => {

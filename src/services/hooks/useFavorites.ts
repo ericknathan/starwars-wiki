@@ -1,18 +1,10 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { ItemDetail } from '~/types'
 
 const DB_KEY = '@StarWarsWiki:favourites'
 
-type DataType = {
-  image_url: string
-  title: string
-  name: string
-  subtitle: string
-  type: string
-  id: number
-}
-
 export const useFavorites = () => {
-  const addFavorite = async (data: DataType) => {
+  const addFavorite = async (data: ItemDetail) => {
     try {
       let newDb
       const value = await AsyncStorage.getItem(DB_KEY)
@@ -40,7 +32,7 @@ export const useFavorites = () => {
     return []
   }
 
-  const removeFavorite = async (data: DataType) => {
+  const removeFavorite = async (data: ItemDetail) => {
     try {
       let newDb
       const value = await AsyncStorage.getItem(DB_KEY)

@@ -38,6 +38,7 @@ export const ScreenScrollContainer = styled.ScrollView.attrs(
           paddingVertical: theme.metrics.px(56),
         }
       : {},
+    withPadding,
   })
 )`
   background-color: ${({ bg, theme }: ViewType) => theme.colors[bg || 'dark']};
