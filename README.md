@@ -15,8 +15,9 @@
 
 ## 💻 Projeto
 Aplicativo com a principal funcionalidade de mostrar filmes e personagens da franquia StarWars, você pode adicioná-los às suas listas de favoritos e procurar personagens/filmes através de seu nome.
+Você pode pré visualiza-lo baixando o aplicativo Expo Go em seu smartphone e escaneando o QR Code presente [nesta página](https://expo.dev/@ericknathan/StarWarsWiki).
 
-![Alt Text](https://media.giphy.com/media/6OECbfhIGPGF7vaozV/giphy.gif)
+![Preview](https://media.giphy.com/media/zUNK02P7Cxdb11kM38/source.gif)
 
 ## :hammer_and_wrench: Features 
 
