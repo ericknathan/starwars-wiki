@@ -19,6 +19,7 @@ type ThemePropsType = {
   lh?: number
   fontFamily?: string
   align?: 'left' | 'center' | 'right'
+  flex?: boolean
 }
 
 declare module 'styled-components' {

@@ -10,6 +10,7 @@ module.exports = function (api) {
           rootPathSuffix: 'src',
         },
       ],
+      'inline-dotenv',
     ],
   }
 }

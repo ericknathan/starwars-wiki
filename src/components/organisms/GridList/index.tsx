@@ -3,8 +3,8 @@ import { FlatList } from 'react-native'
 import { Text, Container } from '~/components/atoms'
 import { Card } from '~/components/molecules'
 import { SeparatorView, NoDataImage } from './styles'
-import noDataSearch from '../../../../assets/no-results.png'
-import noDataFavorites from '../../../../assets/no-favorites.png'
+import noDataSearch from '~/assets/no-results.png'
+import noDataFavorites from '~/assets/no-favorites.png'
 
 type GridListProps = {
   data?: [] | never[]

@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import {
-  HeroContainer,
-  HeroImageBackground,
-  HeroGradient,
-  ButtonsView,
-} from './styles'
-import { Text, Logo } from '~/components/atoms'
+import { HeroContainer, ButtonsView, HeaderContainer } from './styles'
+import { Text, Logo, ProfileImage } from '~/components/atoms'
 import {
   FavoriteStateModal,
   Tag,
   IconButton,
   WatchButton,
+  BackgroundImage,
 } from '~/components/molecules'
-import { colors } from '~/styles/colors'
 import { useFavorites } from '~/services/hooks'
 import { useDataStore } from '~/services/stores'
 import { ItemDetail } from '~/types'
@@ -78,41 +73,44 @@ export const Hero = ({ item, onDetail }: ItemProps) => {
 
   return (
     <HeroContainer>
-      <HeroImageBackground
-        source={{
+      <BackgroundImage
+        image={{
           uri: image_url,
         }}
       >
-        <HeroGradient colors={[colors.dark, 'transparent', colors.dark]}>
-          {!onDetail && <Logo size="small" />}
-          <Tag mt={onDetail ? 224 : 200}>{type}</Tag>
-          <Text fontFamily="bold" size={28} mt={8}>
-            {title}
-          </Text>
-          <Text size={18}>{subtitle}</Text>
-          <ButtonsView>
-            <IconButton
-              onPress={() =>
-                isFavorite ? removeDataToFavorite() : addDataToFavorite()
-              }
-              label={isFavorite ? 'Rem. Favoritos' : 'Add Favoritos'}
-              iconName={
-                isFavorite ? 'remove-circle-outline' : 'add-circle-outline'
-              }
-            />
-            {item?.type === 'Filme' && <WatchButton onPress={onPressWatch} />}
-            {!onDetail && (
-              <>
-                <IconButton
-                  onPress={onPressDetail}
-                  label="Saiba mais"
-                  iconName="information-circle-outline"
-                />
-              </>
-            )}
-          </ButtonsView>
-        </HeroGradient>
-      </HeroImageBackground>
+        {!onDetail && (
+          <HeaderContainer>
+            <Logo size="small" />
+            <ProfileImage />
+          </HeaderContainer>
+        )}
+        <Tag mt={onDetail ? 224 : 200}>{type}</Tag>
+        <Text fontFamily="bold" size={28} mt={8}>
+          {title}
+        </Text>
+        <Text size={18}>{subtitle}</Text>
+        <ButtonsView>
+          <IconButton
+            onPress={() =>
+              isFavorite ? removeDataToFavorite() : addDataToFavorite()
+            }
+            label={isFavorite ? 'Rem. Favoritos' : 'Add Favoritos'}
+            iconName={
+              isFavorite ? 'remove-circle-outline' : 'add-circle-outline'
+            }
+          />
+          {item?.type === 'Filme' && <WatchButton onPress={onPressWatch} />}
+          {!onDetail && (
+            <>
+              <IconButton
+                onPress={onPressDetail}
+                label="Saiba mais"
+                iconName="information-circle-outline"
+              />
+            </>
+          )}
+        </ButtonsView>
+      </BackgroundImage>
       {!!showFavoriteModal && (
         <FavoriteStateModal
           type={showFavoriteModal}

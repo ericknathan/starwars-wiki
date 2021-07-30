@@ -6,8 +6,8 @@ import {
   ModalContentContainer,
   FavoriteImage,
 } from './styles'
-import favoriteAdded from '../../../../assets/favorite-added.png'
-import favoriteRemoved from '../../../../assets/favorite-removed.png'
+import favoriteAdded from '~/assets/favorite-added.png'
+import favoriteRemoved from '~/assets/favorite-removed.png'
 
 type ModalType = {
   visible: boolean

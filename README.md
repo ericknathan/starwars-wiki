@@ -21,6 +21,7 @@ Aplicativo com a principal funcionalidade de mostrar filmes e personagens da fra
 
 -   [ ] Indicação de busca vazia
 -   [ ] Ordenação aleatória de filmes e personagens
+-   [ ] Sistema de autenticação através do Discord oAuth2 
 
 ## ✨ Tecnologias
 
@@ -28,12 +29,13 @@ Aplicativo com a principal funcionalidade de mostrar filmes e personagens da fra
 - [React Native](https://facebook.github.io/react-native/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Expo](https://docs.expo.io/)
+- [Expo Auth Session](https://docs.expo.dev/versions/latest/sdk/auth-session/)
+- [Expo Google Fonts](https://expo.io/@exponent/google-fonts/)
 - [Styled Components](https://styled-components.com/)
 - [Zustand](https://github.com/pmndrs/zustand/)
 - [Async Storage](https://docs.expo.io/versions/latest/sdk/async-storage/)
 - [IonIcons](http://ionicons.com/)
 - [Axios](https://github.com/axios/axios/)
-- [Expo Google Fonts](https://expo.io/@exponent/google-fonts/)
 - [React Navigation](https://reactnavigation.org/)
 - [Linear Gradient](https://docs.expo.io/versions/latest/sdk/linear-gradient/)
 - [React Native Youtube Iframe](https://github.com/LonelyCpp/react-native-youtube-iframe/)
@@ -56,6 +58,17 @@ Clone o projeto e utilize o instalador de pacotes para instalar as dependências
 git clone https://github.com/ericknathan/starwars-wiki.git
 yarn install ou npm install
 ```
+
+Lembre-se de criar o seu App no servidor do Discord para obter as credencias de autenticação. Em seguida, defina no arquivo .env as configurações do seu App (remova o example do arquivo .env.example).
+ 
+ ```cl
+REDIRECT_URI=
+SCOPE=identify%20email%20connections%20guilds
+RESPONSE_TYPE=token
+CLIENT_ID=
+CDN_IMAGE=https://cdn.discordapp.com
+```
+
 
 Em seguida, inicie o projeto.
 ```cl

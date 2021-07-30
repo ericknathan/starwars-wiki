@@ -14,6 +14,7 @@ type TextProps = {
   lh?: number
   style?: object
   align?: 'left' | 'center' | 'right'
+  flex?: boolean
 }
 
 export const Text = ({ children, ...props }: TextProps) => {

@@ -11,6 +11,7 @@ import {
 } from '@expo-google-fonts/source-sans-pro'
 import { theme } from './src/styles'
 import { Routes } from './src/routes'
+import { AuthProvider } from '~/services/hooks'
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -25,7 +26,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Routes />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </ThemeProvider>
   )
 }

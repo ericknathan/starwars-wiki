@@ -31,7 +31,7 @@ export const Container = styled.View.attrs(
 `
 
 export const ScreenScrollContainer = styled.ScrollView.attrs(
-  ({ theme, withPadding }: ViewType) => ({
+  ({ theme, withPadding, align }: ViewType) => ({
     contentContainerStyle: withPadding
       ? {
           paddingHorizontal: theme.metrics.px(24),
@@ -39,6 +39,7 @@ export const ScreenScrollContainer = styled.ScrollView.attrs(
         }
       : {},
     withPadding,
+    alignItems: align,
   })
 )`
   background-color: ${({ bg, theme }: ViewType) => theme.colors[bg || 'dark']};

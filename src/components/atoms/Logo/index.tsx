@@ -1,6 +1,6 @@
 import React from 'react'
 import { LogoImg } from './styles'
-import logoImage from '../../../../assets/logoEmpire.png'
+import logoImage from '~/assets/logoEmpire.png'
 
 const sizes: {
   [key: string]: number
