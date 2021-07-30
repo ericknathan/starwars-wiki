@@ -13,20 +13,20 @@
 
 ![cover](.github/images/cover.png?style=flat)
 
-## 💻 Projeto
-Aplicativo com a principal funcionalidade de mostrar filmes e personagens da franquia StarWars, você pode adicioná-los às suas listas de favoritos e procurar personagens/filmes através de seu nome.
+## 💻 Description
+Application with the main functionality to show movies and characters from the StarWars films, you can add them to your favorites lists and search for characters/movies through their name.
 
 ![Alt Text](https://media.giphy.com/media/6OECbfhIGPGF7vaozV/giphy.gif)
 
 ## :hammer_and_wrench: Features 
 
--   [x] Indicação de busca vazia
--   [x] Ordenação aleatória de filmes e personagens
--   [x] Sistema de autenticação através do Discord oAuth2 
--   [x] Salvamento de favoritos em banco de dados para evitar perdas em outros dispositivos
--   [ ] Redirecionamento para caso o usuário não esteja conectado à internet
+-   [x] Empty search prompt
+-   [x] Random ordering of movies and characters
+-   [x] Authentication system through Discord oAuth2 
+-   [x] Saving bookmarks to database to avoid loss on other devices
+-   [ ] Redirection for if the user is not connected to the internet
 
-## ✨ Tecnologias
+## ✨ Technologies
 
 - [Node.JS](https://nodejs.org/en/)
 - [React Native](https://facebook.github.io/react-native/)
@@ -47,23 +47,23 @@ Aplicativo com a principal funcionalidade de mostrar filmes e personagens da fra
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/FcJqDIFJpy43Zik4QhoJ39/DevRiseWeek-StarWars?node-id=2%3A2). É necessário ter conta no [Figma](http://figma.com/) para acessá-lo.
+You can view the project layout through [this link](https://www.figma.com/file/FcJqDIFJpy43Zik4QhoJ39/DevRiseWeek-StarWars?node-id=2%3A2). You must have a [Figma](http://figma.com/) account to access it.
 
 
-## Executando o projeto
+## Running the project
 
-Primeiro será necessário instalar as dependências do projeto, neste caso o Expo e o [Android Studio](https://developer.android.com/studio) para executar a aplicação em sua máquina caso desejar.
+First you will need to install the project dependencies, in this case Expo and [Android Studio](https://developer.android.com/studio) to run the application on your machine if you want.
 ```cl
 npm install --global expo-cli
 ```
 
-Clone o projeto e utilize o instalador de pacotes para instalar as dependências do projeto.
+Clone the project and use the package manager to install project dependencies.
 ```cl
 git clone https://github.com/ericknathan/starwars-wiki.git
 yarn install ou npm install
 ```
 
-Lembre-se de criar o seu App no servidor do Discord para obter as credencias de autenticação e configurar o Realtime Database no serviço Firebase do Google. Em seguida, defina no arquivo .env as configurações do seu App (remova o example do arquivo .env.example).
+Remember to create your App on Discord server to obtain authentication credentials and configure Realtime Database on Google Firebase service. Then define your App's settings in the .env file (remove the .example of file .env.example).
  
  ```cl
 REDIRECT_URI=
@@ -81,20 +81,20 @@ FIREBASE_APP_ID=
 ```
 
 
-Em seguida, inicie o projeto.
+Then start the project.
 ```cl
 expo start
 
-// Digite "a" para rodar a aplicação no emulador android ou "i" para rodar a aplicação no ios
+// Press "a" to run the application on android emulator or "i" to run the application on ios
 ```
 
-## Links Úteis
-- [Projeto públicado no expo](https://expo.dev/@sevencoders/StarWarsWiki)
-- [Playlist das aulas](https://www.youtube.com/playlist?list=PL4zG19BCs4pdPJzElbUxCykHTClU-B0Ts)
-- [API Utilizada](https://sevencoders-starwars-wiki.herokuapp.com)
+## Useful links
+- [Project published at the expo](https://expo.dev/@sevencoders/StarWarsWiki)
+- [Lesson playlist (Portuguese only)](https://www.youtube.com/playlist?list=PL4zG19BCs4pdPJzElbUxCykHTClU-B0Ts)
+- [Used API](https://sevencoders-starwars-wiki.herokuapp.com)
 
-## 📄 Licença
+## 📄 License
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+This project is under the MIT license. See the [LICENSE](LICENSE) file for more details.
 
 <br />

@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "StarWarsWiki",
-    "slug": "StarWarsWiki",
+    "slug": "starwarswiki",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
