@@ -10,8 +10,6 @@
 
 ![cover](.github/images/cover.png?style=flat)
 
-
-
 ## 💻 Projeto
 Aplicativo com a principal funcionalidade de mostrar filmes e personagens da franquia StarWars, você pode adicioná-los às suas listas de favoritos e procurar personagens/filmes através de seu nome.
 
@@ -19,9 +17,11 @@ Aplicativo com a principal funcionalidade de mostrar filmes e personagens da fra
 
 ## :hammer_and_wrench: Features 
 
--   [ ] Indicação de busca vazia
--   [ ] Ordenação aleatória de filmes e personagens
--   [ ] Sistema de autenticação através do Discord oAuth2 
+-   [x] Indicação de busca vazia
+-   [x] Ordenação aleatória de filmes e personagens
+-   [x] Sistema de autenticação através do Discord oAuth2 
+-   [x] Salvamento de favoritos em banco de dados para evitar perdas em outros dispositivos
+-   [ ] Redirecionamento para caso o usuário não esteja conectado à internet
 
 ## ✨ Tecnologias
 
@@ -32,6 +32,7 @@ Aplicativo com a principal funcionalidade de mostrar filmes e personagens da fra
 - [Expo Auth Session](https://docs.expo.dev/versions/latest/sdk/auth-session/)
 - [Expo Google Fonts](https://expo.io/@exponent/google-fonts/)
 - [Styled Components](https://styled-components.com/)
+- [Firebase](https://firebase.google.com/)
 - [Zustand](https://github.com/pmndrs/zustand/)
 - [Async Storage](https://docs.expo.io/versions/latest/sdk/async-storage/)
 - [IonIcons](http://ionicons.com/)
@@ -59,7 +60,7 @@ git clone https://github.com/ericknathan/starwars-wiki.git
 yarn install ou npm install
 ```
 
-Lembre-se de criar o seu App no servidor do Discord para obter as credencias de autenticação. Em seguida, defina no arquivo .env as configurações do seu App (remova o example do arquivo .env.example).
+Lembre-se de criar o seu App no servidor do Discord para obter as credencias de autenticação e configurar o Realtime Database no serviço Firebase do Google. Em seguida, defina no arquivo .env as configurações do seu App (remova o example do arquivo .env.example).
  
  ```cl
 REDIRECT_URI=
@@ -67,6 +68,13 @@ SCOPE=identify%20email%20connections%20guilds
 RESPONSE_TYPE=token
 CLIENT_ID=
 CDN_IMAGE=https://cdn.discordapp.com
+
+FIREBASE_API_KEY=
+FIREBASE_AUTH_DOMAIN=
+FIREBASE_PROJECT_ID=
+FIREBASE_STORAGE_BUCKET=
+FIREBASE_MESSAGING_SENDER_ID=
+FIREBASE_APP_ID=
 ```
 
 

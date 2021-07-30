@@ -1,5 +1,10 @@
 import 'react-native-gesture-handler'
 import React from 'react'
+import { LogBox } from 'react-native'
+LogBox.ignoreLogs(['Setting a timer'])
+
+import '~/services/database'
+
 import AppLoading from 'expo-app-loading'
 import { ThemeProvider } from 'styled-components'
 import {

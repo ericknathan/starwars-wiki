@@ -35,11 +35,11 @@ type AuthorizationResponse = AuthSession.AuthSessionResult & {
     error?: string
   }
 }
-const { SCOPE } = process.env
-const { CLIENT_ID } = process.env
-const { CDN_IMAGE } = process.env
-const { REDIRECT_URI } = process.env
-const { RESPONSE_TYPE } = process.env
+const { DISCORD_SCOPE } = process.env
+const { DISCORD_CLIENT_ID } = process.env
+const { DISCORD_CDN_IMAGE } = process.env
+const { DISCORD_REDIRECT_URI } = process.env
+const { DISCORD_RESPONSE_TYPE } = process.env
 const DB_KEY = '@StarWarsWiki:user'
 
 export const AuthContext = createContext({} as AuthContextData)
@@ -52,7 +52,7 @@ function AuthProvider({ children }: AuthProviderProps) {
     try {
       setLoading(true)
 
-      const authUrl = `${authApi.defaults.baseURL}/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`
+      const authUrl = `${authApi.defaults.baseURL}/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&redirect_uri=${DISCORD_REDIRECT_URI}&response_type=${DISCORD_RESPONSE_TYPE}&scope=${DISCORD_SCOPE}`
 
       const { type, params } = (await AuthSession.startAsync({
         authUrl,
@@ -62,7 +62,7 @@ function AuthProvider({ children }: AuthProviderProps) {
         authApi.defaults.headers.authorization = `Bearer ${params.access_token}`
 
         const userInfo = await authApi.get('/users/@me')
-        userInfo.data.avatar = `${CDN_IMAGE}/avatars/${userInfo.data.id}/${userInfo.data.avatar}.png`
+        userInfo.data.avatar = `${DISCORD_CDN_IMAGE}/avatars/${userInfo.data.id}/${userInfo.data.avatar}.png`
 
         const userData = {
           ...userInfo.data,

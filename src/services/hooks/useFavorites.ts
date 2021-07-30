@@ -1,21 +1,24 @@
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import { ItemDetail } from '~/types'
-
-const DB_KEY = '@StarWarsWiki:favourites'
+import { useAuth } from '~/services/hooks/useAuth'
+import { database } from '~/services/database'
 
 export const useFavorites = () => {
+  const { user } = useAuth()
   const addFavorite = async (data: ItemDetail) => {
     try {
       let newDb
-      const value = await AsyncStorage.getItem(DB_KEY)
-      if (value !== null) {
-        const db = JSON.parse(value)
-        newDb = [...db, data]
-      } else {
-        newDb = [data]
-      }
-      const jsonValue = JSON.stringify(newDb)
-      await AsyncStorage.setItem(DB_KEY, jsonValue)
+      await database
+        .ref(`${user.id}/favorites`)
+        .once('value')
+        .then((snap) => {
+          if (snap.val() !== null) {
+            newDb = [...snap.val(), data]
+            database.ref(`${user.id}/favorites`).set(newDb)
+          } else {
+            newDb = [data]
+            database.ref(`${user.id}/favorites`).set(newDb)
+          }
+        })
       return newDb
     } catch (error) {
       console.log({ error })
@@ -24,29 +27,37 @@ export const useFavorites = () => {
   }
 
   const getFavorites = async () => {
-    const value = await AsyncStorage.getItem(DB_KEY)
-    if (value !== null) {
-      const db = JSON.parse(value)
-      return db
-    }
-    return []
+    let db
+    await database
+      .ref(`${user.id}/favorites`)
+      .once('value')
+      .then((snap) => {
+        if (snap.val() !== null) {
+          db = snap.val()
+        }
+      })
+    return db || []
   }
 
   const removeFavorite = async (data: ItemDetail) => {
     try {
       let newDb
-      const value = await AsyncStorage.getItem(DB_KEY)
-      if (value !== null) {
-        const db = JSON.parse(value)
-        newDb = db.filter(
-          (fv: { id: number; title: string }) =>
-            fv.id !== data.id && fv.title !== data.title
-        )
-      } else {
-        newDb = []
-      }
-      const jsonValue = JSON.stringify(newDb)
-      await AsyncStorage.setItem(DB_KEY, jsonValue)
+      await database
+        .ref(`${user.id}/favorites`)
+        .once('value')
+        .then((snap) => {
+          if (snap.val() !== null) {
+            newDb = snap
+              .val()
+              .filter(
+                (fv: { id: number; title: string }) =>
+                  fv.id !== data.id && fv.title !== data.title
+              )
+            database.ref(`${user.id}/favorites`).set(newDb)
+          } else {
+            newDb = []
+          }
+        })
       return newDb
     } catch (error) {
       console.log({ error })
