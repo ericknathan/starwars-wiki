@@ -1,8 +1,8 @@
-[<img width=60 src="https://img.shields.io/static/v1?label=EN&message=US&color=E60C0D&labelColor=404040&style=flat-square" alt="English" />](.github/english/README.md)
-[<img width=60 src="https://img.shields.io/static/v1?label=PT&message=BR&color=E60C0D&labelColor=404040&style=flat-square" alt="Português" />](README.md)
+[<img width=60 src="https://img.shields.io/static/v1?label=EN&message=US&color=E60C0D&labelColor=404040&style=flat-square" alt="English" />](README.md)
+[<img width=60 src="https://img.shields.io/static/v1?label=PT&message=BR&color=E60C0D&labelColor=404040&style=flat-square" alt="Português" />](../../README.md)
 
 <h1 align="center">
-  <img alt="StarWarsWiki Logo" height="80" title="StarWars Wiki" src=".github/images/logo.png" />
+  <img alt="StarWarsWiki Logo" height="80" title="StarWars Wiki" src="../images/logo.png" />
 </h1>
 
 <p align="center">
@@ -11,7 +11,7 @@
  <img src="https://img.shields.io/static/v1?label=DRW&message=02&color=E60C0D&labelColor=404040&style=flat-square" alt="DevRiseWeek 02" />
 </p>
 
-![cover](.github/images/cover.png?style=flat)
+![cover](../images/cover.png?style=flat)
 
 ## 💻 Description
 Application with the main functionality to show movies and characters from the StarWars films, you can add them to your favorites lists and search for characters/movies through their name.
@@ -95,6 +95,6 @@ expo start
 
 ## 📄 License
 
-This project is under the MIT license. See the [LICENSE](LICENSE) file for more details.
+This project is under the MIT license. See the [LICENSE](../../LICENSE) file for more details.
 
 <br />
